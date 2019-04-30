@@ -11,6 +11,10 @@ label {
     margin-bottom: 1rem;
 }
 
+.button-primary {
+    margin-right: 16px;
+}
+
 .loading {
     position        : absolute;
     display         : flex;

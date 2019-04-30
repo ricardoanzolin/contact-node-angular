@@ -9,7 +9,7 @@ import { Contact } from './contact';
   styleUrls: ['./contacts.component.css']
 })
 export class ContactsComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'email', 'phone', 'twitter'];
+  displayedColumns: string[] = ['name', 'email', 'phone', 'twitter', 'edit', 'delete'];
   dataSource = new MatTableDataSource<any>();
 
   selectedContact: Contact = new Contact();
