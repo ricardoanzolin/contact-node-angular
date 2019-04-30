@@ -1,6 +1,6 @@
-# CRUD de Contatos Básico com Node e Angular
+# CRUD de Contatos com Node e Angular
  
-Exemplos de um cadastro de contatos basico feito com Node e Angular.
+Exemplo de um cadastro de contatos feito com Node e Angular.
 
 **Pré-requisitos:** [Node.js](https://nodejs.org/).
 
