@@ -6,7 +6,7 @@ import { Contact } from './contact';
 @Component({
   selector: 'app-contacts',
   templateUrl: './contacts.component.html',
-  styleUrls: ['./contacts.component.css']
+  styleUrls: ['./contacts.component.scss']
 })
 export class ContactsComponent implements OnInit {
   displayedColumns: string[] = ['name', 'email', 'phone', 'twitter', 'edit', 'delete'];
