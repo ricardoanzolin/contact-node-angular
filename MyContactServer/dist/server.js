@@ -5,10 +5,12 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const bearerToken = require('express-bearer-token');
 const contact_1 = require("./contact");
+const auth_1 = require("./auth");
 const app = express()
     .use(cors())
     .use(bodyParser.json())
     .use(bearerToken())
+    .use(auth_1.oktaAuth)
     .use(contact_1.router);
 app.listen(4201, (err) => {
     if (err) {

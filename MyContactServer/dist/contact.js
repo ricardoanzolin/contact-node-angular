@@ -52,7 +52,7 @@ exports.router.post('/contact', function (req, res, next) {
         }
     });
 });
-exports.router.post('/contact/:id', function (req, res, next) {
+exports.router.patch('/contact/:id', function (req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const repository = yield model_1.getContactRepository();
