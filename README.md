@@ -99,6 +99,42 @@ OktaAuthModule.initAuth({
 }),
 ```
 
+## Explicando a aplicação
+
+A ideia basica da aplicação era criar um cadastro de contatos com os seguintes campos (Name, Email, Twitter, Phone). Utilizando Angular e Node.
+
+### Client-side
+
+Apos criar uma nova aplicação em angular com:
+
+```ng new MyContactCrud```
+
+e instalar as dependências:
+
+``npm i @angular/material@7.0.2 @angular/cdk@7.0.2 @angular/animations@7.0.1 @angular/flex-layout@7.0.0-beta.19``
+
+Vamos criar o componente ``contact`` e o componente ``home``
+
+``ng generate component Contacts``
+``ng generate component Home``
+
+No arquivo ``contacts.component.ts`` temos a classe ``ContactsComponent`` com os métodos de criar, editar, atualizar e excluir um contato.
+
+No arquivo ``contacts.component.html`` fica a nossa interface, exibindo uma tabela que lista os contatos e um formulário na lateral, para incluir e alterar um contato. Uma das colunas da tabela, tem um icone de lixeira, onde você pode excluir um contato.
+
+O arquivo ``contacts.service.ts`` possui a classe ``ContactsService`` nessa classe temos os seguintes métodos:
+
+* ``getContacts()`` - Método GET para retornar todos os contatos
+* ``getContact(id: string)`` - Método GET com o parâmetro ID, retornando um contato pelo seu respectivo ID
+* ``createContact(contact: Contact)`` - Método POST com o parâmetro Contact, para criar um novo contato
+* ``updateContact(contact: Contact)`` - Método PATCH com o parâmetro Contact, para atualizar um contato
+* ``deleteContact(id: string)`` - Método DELETE com o parâmetro ID, para deletar um contato
+
+### Server-side
+
+
+
+
 
 
 
