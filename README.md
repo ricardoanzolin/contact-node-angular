@@ -43,6 +43,10 @@ ng serve
 
 * TypeOrm: ``Uma biblioteca ORM de banco de dados para TypeScript``
 
+* Bootstrap: ``Estilização de componentes``
+
+* Okta: ``Para autenticação e controle de usuários``
+
 
 ### Um pouco sobre os arquivos
 
@@ -57,6 +61,46 @@ ng serve
 ``app-routing.module.ts`` - Arquivo de configuração das rotas da aplicação
 
 ``app.component.spec.ts`` - Esqueleto de testes unitários da aplicação
+
+### Autenticação
+
+* [Okta](https://developer.okta.com)
+
+O Okta foi utilizado para simplificar o processo de controle de acessos, a biblioteca gerencia toda a parte de autenticação, autorização e controle de usuários. 
+
+Crie uma conta dentro do Okta:
+
+1. Logue com sua conta de desenvolvedor, va até a aba **Applications**, e clique em **Add Application**.
+3. Selecione **Single-Page App** e clique em **Next**. 
+4. Dê um nome para a aplicação, altere o endereço `localhost:8080` para `localhost:4200` e clique **Done**.
+
+#### Configurações do Servidor
+
+Configure seu dominio e copie o `clientId` para `MyContactServer/src/auth.ts`. 
+
+**NOTA:** O valor de `{yourOktaDomain}` deve ser algo como `dev-123456.oktapreview`. Garanta que você não adicionou `-admin` no valor do dominio!
+
+```ts
+const oktaJwtVerifier = new OktaJwtVerifier({
+  clientId: '{clientId}',
+  issuer: 'https://{yourOktaDomain}/oauth2/default'
+});
+```
+
+#### Configuração do cliente
+
+Para o cliente, configure o `issuer` e copie o `clientId` para `MyContactCrud/src/app/app.module.ts`.
+
+```typescript
+OktaAuthModule.initAuth({
+  issuer: 'https://{yourOktaDomain}/oauth2/default',
+  redirectUri: 'http://localhost:4200/implicit/callback',
+  clientId: '{clientId}'
+}),
+```
+
+
+
 
 ## License
 
