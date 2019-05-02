@@ -131,7 +131,26 @@ O arquivo ``contacts.service.ts`` possui a classe ``ContactsService`` nessa clas
 * ``updateContact(contact: Contact)`` - Método PATCH com o parâmetro Contact, para atualizar um contato
 * ``deleteContact(id: string)`` - Método DELETE com o parâmetro ID, para deletar um contato
 
+Criamos também um arquivo chamado ``contact.ts`` dentro de ``app.contacts`` que representa um contato e seus atributos.
+
 ### Server-side
+
+Criando nosso servidor em Node com:
+
+```npm ini```
+
+Instalando as dependências:
+
+``npm install --save-exact express@4.16.4 @types/express@4.16.0 @okta/jwt-verifier@0.0.14 express-bearer-token@2.2.0 tsc@1.20150623.0 typescript@3.1.3 typeorm@0.2.8 sqlite3@4.0.3 cors@2.8.4 @types/cors@2.8.4``
+
+
+O primeiro passo para criarmos nosso servidor é criando o banco de dados e o modelo que vai representar um contato. Como estou utilizando o ``TypeORM`` a partir do momento que criamos o arquivo ``model.ts``  com a classe ``Contact`` e os seus respectivos atributos o ``TypeORM`` já vai criar a tabela no banco de dados. Dentro desse mesmo arquivo, temos a conexão com o banco e o método ``getContactsRepository()`` responsável pela comunicação do modelo com o banco de dados.
+
+Segundo passo, criar o arquivo ``contacts.ts`` onde vamos configurar nossos end-points para comunicação do client-side.
+
+Terceiro passo, criar o arquivo ``auth.ts`` responsável pela parte de autenticação de servidor e cliente.
+
+Quarto passo, criar o arquivo ``server.ts`` responsável por instanciar o servidor com ``express``
 
 
 
