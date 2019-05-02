@@ -116,6 +116,7 @@ e instalar as dependências:
 Vamos criar o componente ``contact`` e o componente ``home``
 
 ``ng generate component Contacts``
+
 ``ng generate component Home``
 
 No arquivo ``contacts.component.ts`` temos a classe ``ContactsComponent`` com os métodos de criar, editar, atualizar e excluir um contato.
